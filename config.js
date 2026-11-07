@@ -1,8 +1,5 @@
-// Supabase bağlantı bilgileri.
-// Boş bırakılırsa site DEMO modunda çalışır (veriler sadece tarayıcıda tutulur).
-// Supabase > Project Settings > API sayfasındaki "Project URL" ve "anon public" anahtarını yapıştır.
-// Not: anon anahtarı herkese açık olacak şekilde tasarlanmıştır; service_role anahtarını ASLA buraya yazma.
+// Supabase bağlantı bilgileri (herkese açık anahtar; secret anahtar ASLA buraya yazılmaz).
 window.KB_CONFIG = {
-  SUPABASE_URL: '',
-  SUPABASE_ANON_KEY: ''
+  SUPABASE_URL: 'https://gzqrqdddpuahtvnyhheq.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_V6DzSfxYsCNxA4X7x4CNlw_09lw_ARK'
 };
