@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /mesajlar
+Disallow: /ayarlar
+Disallow: /yonetim
+Disallow: /paylas
+Disallow: /giris
+Disallow: /kayit
+Disallow: /yeni-sifre
+Disallow: /oyun/
+
+Sitemap: https://kimsebilmesin.com/sitemap.xml
