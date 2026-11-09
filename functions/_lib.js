@@ -139,6 +139,8 @@ export function renderAsk(template, t) {
   html = setMeta(html, /<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="' + esc(title) + '">');
   html = setMeta(html, /<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="' + esc(desc) + '">');
   html = setMeta(html, /<meta property="og:url" content="[^"]*">/, '<meta property="og:url" content="' + esc(url) + '">');
+  html = html.replace(/<meta property="og:image" content="[^"]*">/, '<meta property="og:image" content="' + SITE + '/og-sor.png">');
+  html = html.replace(/<meta name="twitter:image" content="[^"]*">/, '<meta name="twitter:image" content="' + SITE + '/og-sor.png">');
   html = html.replace('<!--SEO-->', '<meta name="robots" content="noindex, follow">');
   return html;
 }
