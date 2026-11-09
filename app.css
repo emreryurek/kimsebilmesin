@@ -300,3 +300,43 @@ html.gate-open, html.gate-open body { overflow: hidden; }
   .gate-overlay { align-items: center; padding: 32px; }
   .gate-overlay .gate { min-height: 0; margin: auto; border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 24px 64px rgba(22,21,29,.18); padding: 44px 40px 32px; }
 }
+
+/* Canlı destek */
+.support-fab { position: fixed; right: 16px; bottom: calc(84px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 54px; height: 54px; border-radius: 50%; border: 0; background: linear-gradient(145deg, #7C5CFF, #4A2FD6); box-shadow: 0 10px 26px rgba(91,61,245,.42); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform .15s ease; }
+.support-fab:hover { transform: scale(1.06); }
+.support-panel { position: fixed; left: 8px; right: 8px; bottom: calc(146px + env(safe-area-inset-bottom, 0px)); top: calc(env(safe-area-inset-top, 0px) + 12px); z-index: 45; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 18px 50px rgba(20,16,40,.22); display: flex; flex-direction: column; overflow: hidden; animation: up .2s ease; }
+.support-head { display: flex; align-items: center; gap: 10px; padding: 12px 10px 12px 14px; border-bottom: 1px solid var(--line); }
+.support-ava { width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(145deg, #7C5CFF, #4A2FD6); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.support-online { color: #15803D; font-weight: 600; }
+.support-online::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #22C55E; margin-right: 5px; vertical-align: 1px; }
+.support-list { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; background: var(--bg); }
+.support-msg { display: flex; flex-direction: column; gap: 6px; max-width: 88%; }
+.support-msg.me { align-self: flex-end; align-items: flex-end; }
+.support-bubble { padding: 10px 13px; border-radius: 16px; font-size: 14px; line-height: 1.5; background: var(--surface); border: 1px solid var(--line); border-bottom-left-radius: 6px; white-space: pre-wrap; }
+.support-msg.me .support-bubble { background: var(--accent); color: #fff; border-color: transparent; border-bottom-left-radius: 16px; border-bottom-right-radius: 6px; }
+.support-links, .support-quick { display: flex; flex-wrap: wrap; gap: 6px; }
+.support-links .pill { height: 30px; font-size: 12px; color: var(--accent-ink); }
+.support-human { border-color: var(--accent); color: var(--accent-ink); }
+.support-handoff { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+.support-handoff .textarea { min-height: 84px; }
+.support-input { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--line); background: var(--surface); }
+.support-input .input { height: 44px; }
+.support-input .send { color: #fff; flex-shrink: 0; }
+.support-input .send:disabled { opacity: .4; }
+/* paylaşım sayfasında telefonda cevap kutusunu kapatmasın diye gizli; masaüstünde kutunun üstünde */
+.support-fab.raised, .support-panel.raised { display: none; }
+@media (min-width: 960px) {
+  .support-fab.raised { display: flex; bottom: 104px; }
+  .support-panel.raised { display: flex; bottom: 176px; }
+  .support-fab { right: 24px; bottom: 24px; width: 58px; height: 58px; }
+  .support-panel { left: auto; top: auto; right: 24px; bottom: 96px; width: 380px; height: min(600px, calc(100vh - 140px)); }
+}
+
+/* Kurallar sayfası */
+.rules-toc { display: flex; flex-wrap: wrap; gap: 6px; }
+.rules-list { margin: 0; padding-left: 18px; line-height: 1.7; display: flex; flex-direction: column; gap: 4px; }
+.rules-list b { color: var(--ink); }
+.rules-steps { display: grid; gap: 8px; }
+.rules-step { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.55; }
+.rules-step span:first-child { flex-shrink: 0; min-width: 26px; height: 26px; border-radius: 8px; background: var(--accent-soft); color: var(--accent-ink); font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+.side-cat.on { background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; }
