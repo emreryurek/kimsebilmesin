@@ -126,3 +126,19 @@ export function htmlResponse(html, maxAge = 120) {
     headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'public, max-age=' + maxAge }
   });
 }
+
+// /sor/kullanici sayfası: WhatsApp, Telegram ve Instagram önizlemesinde davet başlığı görünsün; Google'da listelenmesin.
+export function renderAsk(template, t) {
+  const url = SITE + '/sor/' + t.username;
+  const title = '@' + t.username + ' · Bana gizlice bir şey sor 🤫';
+  const desc = 'Kim olduğun gösterilmez. Aklındakini isim vermeden sor. · Kimse Bilmesin';
+  let html = template;
+  html = setMeta(html, /<title>[^<]*<\/title>/, '<title>' + esc(title + ' | ' + SITE_NAME) + '</title>');
+  html = setMeta(html, /<meta name="description" content="[^"]*">/, '<meta name="description" content="' + esc(desc) + '">');
+  html = setMeta(html, /<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + esc(url) + '">');
+  html = setMeta(html, /<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="' + esc(title) + '">');
+  html = setMeta(html, /<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="' + esc(desc) + '">');
+  html = setMeta(html, /<meta property="og:url" content="[^"]*">/, '<meta property="og:url" content="' + esc(url) + '">');
+  html = html.replace('<!--SEO-->', '<meta name="robots" content="noindex, follow">');
+  return html;
+}
