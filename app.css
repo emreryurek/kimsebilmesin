@@ -340,3 +340,14 @@ html.gate-open, html.gate-open body { overflow: hidden; }
 .rules-step { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.55; }
 .rules-step span:first-child { flex-shrink: 0; min-width: 26px; height: 26px; border-radius: 8px; background: var(--accent-soft); color: var(--accent-ink); font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; }
 .side-cat.on { background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; }
+
+/* Bildirimler */
+.notif-list { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.notif { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-top: 1px solid var(--line); color: inherit; text-decoration: none; }
+.notif:first-child { border-top: 0; }
+.notif:hover { background: var(--surface-2); }
+.notif.unread { background: var(--accent-soft); }
+.notif-ic { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--surface-2); color: var(--accent-ink); }
+.notif-ic.t-en_iyi { background: #FEF3C7; color: #B45309; }
+.notif-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; line-height: 1.45; overflow-wrap: anywhere; }
+.notif-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }

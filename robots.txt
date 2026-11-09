@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /mesajlar
+Disallow: /bildirimler
 Disallow: /ayarlar
 Disallow: /yonetim
 Disallow: /paylas
